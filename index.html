@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../js_task/style.css">
+</head>
+<body>
+
+    <button type="button" id="add-button" class="btn btn-outline-dark">Add User</button>    
+
+    <table class="table table-hover">
+        <tr>
+            <th onclick="sortColumn('id')">Id</th>
+            <th onclick="sortColumn('name')">Full Name</th>
+            <th onclick="sortColumn('email')">Email</th>
+            <th onclick="sortColumn('address')">City, Street, Suite</th>
+            <th onclick="sortColumn('company')">Company Name</th>
+            <th onclick="sortColumn('zipcode')">Zipcode</th>
+            <th>Action Buttons</th>
+        </tr>
+        <tbody id="table"></tbody>
+    </table>
+
+</div>
+
+<div class="modal_bg">
+    <div class="modal_edit_body">
+        <h3>Add Your Information Below</h3>
+
+            <input type="hidden" class="input-id" name="user-id">
+            <label for="Full Name">Full Name: </label>
+            <input type="text" id="input-full-name">
+            <label for="Email">Email: </label>
+            <input type="text" id="input-email">
+
+            <label for="City">City: </label>
+            <input type="text" id="input-city">
+            <label for="Street">Street: </label>
+            <input type="text" id="input-street">
+            <label for="Suite">Suite: </label>
+            <input type="text" id="input-suite">
+
+            <label for="Company Name">Company Name: </label>
+            <input type="text" id="input-company-name">
+            <label for="Zipcode">Zipcode: </label>
+            <input type="text" id="input-zipcode">
+            
+            <button class="btn btn-dark save-user-btn" id="save-button">Save</button>
+            <button class="btn btn-dark edit-user-btn" id="save-edit-button">Save</button>
+            <span class="modal-close">x</span>
+            
+    </div>
+</div>
+
+
+
+</body>
+<script src="main.js"></script>
+</html>
