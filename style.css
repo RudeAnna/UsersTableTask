@@ -1,4 +1,4 @@
-.modal_bg {
+.modal_bg, .modal-read-only-bg {
     background: rgba(0,0,0,0.5);
     position: fixed;
     left: 0;
@@ -22,20 +22,32 @@
     display: none;
 }
 
-.modal_edit_body, .modal_read-only_body {
+.modal_edit_body, .modal-read-only-body {
     position: relative;
     background-color: white;
     width: 30%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    box-sizing: border-box; 
-    padding: 15px;
+    box-sizing: border-box;  
+    padding: 15px 25px;
     box-shadow: 5px 5px 10px rgba(132,132,133,1);
     border-radius: 3px;
 }
 
-.modal_edit_body h3 {
+.modal-read-only-body p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+.modal-read-only-body div {
+    display: flex;
+    justify-content: left;
+}
+.modal-read-only-body label {
+    display: inline-block;
+} 
+.modal_edit_body h3, .modal-read-only-body h3 {
     padding: 15px 0;
 }
 .modal_edit_body input {
@@ -45,7 +57,7 @@
 #add-button {
     margin: 15px;
 }
-.modal-close {
+.modal-close, .modal-info-close {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -57,7 +69,3 @@
 #save-button {
     margin-top: 15px;
 }
-
-/* #save-edit-button {
-    display: none;
-} */

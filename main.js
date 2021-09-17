@@ -4,7 +4,6 @@ const modalAddBtn = document.querySelector('#add-button');
 const modalBg = document.querySelector('.modal_bg');
 const modalClose = document.querySelector('.modal-close');
 
-
 const inputId = document.querySelector(".input-id");
 const inputName = document.querySelector('#input-full-name');
 const inputEmail = document.querySelector('#input-email');
@@ -17,6 +16,21 @@ const inputZipcode = document.querySelector('#input-zipcode');
 const modalSave = document.getElementById('save-button');
 const modalEditSave = document.getElementById('save-edit-button');
 
+const modalReadOnlyBg = document.querySelector('.modal-read-only-bg');
+const modalInfoClose = document.querySelector('.modal-info-close');
+
+const modalInfoName = document.querySelector('.info-name');
+const modalInfoUsername = document.querySelector('.info-username');
+const modalInfoEmail = document.querySelector('.info-email');
+const modalInfoPhone = document.querySelector('.info-phone');
+const modalInfoWebsite = document.querySelector('.info-website');
+const modalInfoCompanyName = document.querySelector('.info-company_name');
+const modalInfoCity = document.querySelector('.info-city');
+const modalInfoStreet = document.querySelector('.info-street');
+const modalInfoSuite = document.querySelector('.info-suite');
+const modalInfoZipcode = document.querySelector('.info-zipcode');
+
+
 let mainUsers = [];
 
 fetch('https://jsonplaceholder.typicode.com/users')
@@ -28,6 +42,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
         for(let user of mainUsers) {
             addRow(user);
         }
+        console.log(mainUsers)
+
     })
     .catch(error => {
         console.log(error); 
@@ -90,8 +106,20 @@ function addRow(user){
     const userRow = document.getElementById(`user${userId}`);
 
     userRow.addEventListener('click', function(){ 
-        console.log(userRow);
-        modalBg.classList.add('active');
+        
+        modalReadOnlyBg.classList.add('active');
+
+        modalInfoName.innerHTML = user.name;
+        modalInfoUsername.innerHTML = user.username;
+        modalInfoEmail.innerHTML = user.email;
+        modalInfoPhone.innerHTML = user.phone;
+        modalInfoWebsite.innerHTML = user.website;
+        modalInfoCompanyName.innerHTML = user.company.name; 
+        modalInfoCity.innerHTML = user.address.city;
+        modalInfoStreet.innerHTML = user.address.street;
+        modalInfoSuite.innerHTML = user.address.suite;
+        modalInfoZipcode.innerHTML = user.address.zipcode;
+        
     })
 
 }    
@@ -112,6 +140,13 @@ modalAddBtn.addEventListener('click', function(){
 
 modalClose.addEventListener('click', function(){
     modalBg.classList.remove('active');
+    modalReadOnlyBg.classList.remove('active');
+    clearValue();
+})
+
+modalInfoClose.addEventListener('click', function(){
+    
+    modalReadOnlyBg.classList.remove('active');
     clearValue();
 })
 
