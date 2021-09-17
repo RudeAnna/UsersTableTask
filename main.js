@@ -1,4 +1,3 @@
-
 const table = document.getElementById('table');
 const modalAddBtn = document.querySelector('#add-button');
 const modalBg = document.querySelector('.modal_bg');
@@ -85,7 +84,6 @@ function addRow(user){
         modalEditSave.classList.remove('display');
         modalSave.classList.add('display');
     
-        //console.log(`edit button id`, editBtn.id);
         inputId.value = userId;
         inputName.value = user.name;
         inputEmail.value = user.email;
@@ -121,12 +119,7 @@ function addRow(user){
         modalInfoZipcode.innerHTML = user.address.zipcode;
         
     })
-
 }    
-
-
-//<td>${user.id}</td>
-
 
 //BUTTONS EVENTS
 
@@ -218,8 +211,6 @@ modalEditSave.addEventListener('click', function(){
     modalBg.classList.remove('active');
     renderTable();      
 })
-
-
 
 
 //SORTING
